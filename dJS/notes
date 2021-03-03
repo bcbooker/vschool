@@ -1,0 +1,11 @@
+// event listener for when mouseclickdown and changes squre red
+
+// event listener for when mouseclickup and changes square color to Yellow
+
+// event listener for when mouse is doubleclicked and changes color green
+
+// Orange when the mouse scroll is used in window but not over square
+
+// event listener for when "R" button is pressed and red shows up
+
+// document.addEventListener('keydown', function(event) {}

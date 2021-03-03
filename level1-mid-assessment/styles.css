@@ -1,0 +1,46 @@
+
+/* Objective: 
+    Pt 1: Arrange the boxes into a 2 x 2 grid using CSS Grid.
+    Pt 2: Using CSS flexbox, arrange the boxes into a row, and then arrange them into a column 
+
+    Tips: You may need to adjust the height and width of the container in order to adjust for the changes you make. You don't need to change the height & width for each individual box.
+*/
+
+.container {
+    height: 400px;
+    width: 400px;
+    /* width: 500px; */
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: row;
+}
+
+/* .container {
+    height: 400px;
+    width: 100px;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px;
+} */
+
+.box {
+    height: 100px;
+    width: 100px;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.blue {
+    background-color: blue;
+}
+

@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(66, 65, 65);
+
+}
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+.jumbotron {
+    padding-top: 100px;
+    padding-bottom: 75px;
+    color:aliceblue
+    
+  }
+
+ 
+
+
+#bg-main {
+    padding-top: 100px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+  }
+
+  #colorcolor {
+    padding-top: 100px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+  }
+
+  #colorcolor1 {
+    padding-top: 100px;
+    background-color: rgb(39, 39, 39);
+    color: white;
+  }
+
+  span {
+    color: green;
+  }
+
+  .jumbotron img {
+    width: 20%;
+    height: 20%;
+    float: left;
+    border-radius: 10px;
+    margin-right: 50px
+  }

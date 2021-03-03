@@ -1,0 +1,183 @@
+/* Background */
+body {background-color: rgb(70, 52, 46);}
+
+/* France */
+.fblue {
+    background-color: #002495;
+    width: 20px;
+    height: 30px;
+}
+
+.fwhite {
+    background-color: #FFFFFF;
+    width: 20px;
+}
+
+ .fred {
+    background-color: #ED2938;
+    width: 20px;
+}
+
+.fra {
+    display: inline-flex;
+}
+
+/* Germany */
+.gblack {
+    background-color: #000000;
+    width: 20px;
+    height: 30px; 
+}
+
+.gred {
+    background-color:#DE0002;
+    width: 20px;
+    height: 30px;
+}
+
+.gyellow {
+    background-color: #FFCE00;
+    width: 20px;
+    height: 30px;   
+}
+
+.ger {
+    display: inline-flex;
+}
+
+
+/* Madagascar */
+.mwhite {
+    background-color: #FFFFFF;
+    width: 20px;
+    height: 30px;
+}
+
+.mred {
+    background-color: #FC3E32;
+    width: 20px;
+    height: 30px;
+}
+
+.mgreen {
+    background-color: #007E39;
+    width: 20px;
+    height: 30px;
+}
+
+.mad {
+    display: inline-flex;
+}
+
+/* Switzerland */
+.swhite {
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+ 
+}
+
+.sred {
+    background-color: #FF0002;
+    width: 30px;
+    height: 30px;
+}
+
+.switz {
+    display: inline-flex;
+}
+
+
+/* Sweden */
+.sblue {
+    background-color: #0269A6;
+    width: 30px;
+    height: 30px;
+    
+    
+}
+
+.syellow {
+    background-color: #FECC00;
+    width: 30px;
+    height: 30px;
+}
+
+.swe {
+    display: inline-flex;
+}
+
+/* Gambia */
+.gred {
+    background-color: #CE1127;
+    width: 20px;
+    height: 30px;
+    
+    
+}
+
+.gwhite {
+    background-color:#FFFFFF;
+    width: 10px;
+    height: 30px;
+}
+
+.gblue {
+    background-color: #0D1D8B;
+    width: 10px;
+    height: 30px;
+}
+
+.ggreen {
+    background-color: #3B7827;
+    width: 20px;
+    height: 30px;
+}
+
+.gam {
+    display: inline-flex;
+}
+
+/* Japan */
+.jwhite {
+    background-color: #FFFFFF;
+    width: 30px;
+    height: 30px;
+}
+
+.jred {
+    background-color:#BC022C;
+    width: 30px;
+    height: 30px;
+}
+
+.japan {
+    display: inline-flex;
+}
+
+
+/* Niger */
+.norange {
+    background-color: #E15307;
+    width: 30px;
+    height: 30px;
+}
+
+.nwhite {
+    background-color:#FFFFFF;
+    width: 30px;
+    height: 30px;
+
+}
+
+.ngreen {
+    background-color:#10AF2A;
+    width: 30px;
+    height: 30px;
+}
+
+.japan {
+    display: inline-flex;
+}
+
+

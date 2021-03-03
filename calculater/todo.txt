@@ -1,0 +1,6 @@
+// watch forms video
+        // wireframe is created
+// refactor css
+// grab all form and its elements (div id, or form id) for js
+// build out button functionality for add,sub,multi
+// build out div to display the result of the button functionality

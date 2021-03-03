@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+
+    #header {
+        /* display: block; */
+        background-color: #F5C6D6;
+        border: 8px solid white;
+        margin: auto;
+        width: 100%;
+        height: 150px; 
+    }
+    
+    #content {
+        /* display: inline-flex; */
+        margin:auto;
+        width: 100%;
+        display: flex;
+    }
+
+    .contentboxes {
+        background-color: #EE2E84;
+        border: 6px solid white;
+        width: 100%;
+        /* margin: 2px; */
+        height: 100px;
+        display: inline-block;
+    }
+    
+    .contentboxes2 {
+        background-color: #85CFD8;
+        border: 6px solid white;
+        width: 100%;
+        height: 100px;
+        display: inline-block;
+    }
+    
+    .footerbox1 {
+        background-color: #8DC63F;
+        border: 6px solid white;
+        width: 75%;
+        height: 100px;
+        display: inline-block;
+    }
+    
+    .footerbox2 {
+        background-color: #E76E34;
+        border: 6px solid white;
+        width: 25%;
+        height: 100px;
+        display: inline-block;
+    }
+
+
+
+@media only screen and (max-width: 767px){
+    #header {
+        /* display: block; */
+        background-color: #F5C6D6;
+        border: 8px solid white;
+        margin: auto;
+        width: 100%;
+        height: 150px;
+    }
+    
+    #content {
+        /* display: inline-flex; */
+        margin:auto;
+        width: 100%;
+        display: block
+    }
+
+    .contentboxes {
+        background-color: #EE2E84;
+        border: 6px solid white;
+        width: 100%;
+        /* margin: 2px; */
+        height: 100px;
+        display: block
+    }
+    
+    .contentboxes2 {
+        background-color: #85CFD8;
+        border: 6px solid white;
+        width: 100%;
+        height: 100px;
+        display: block
+    }
+    
+    .footerbox1 {
+        background-color: #8DC63F;
+        border: 6px solid white;
+        width: 100%;
+        height: 100px;
+        display: block
+    }
+    
+    .footerbox2 {
+        background-color: #E76E34;
+        border: 6px solid white;
+        width: 100%;
+        height: 100px;
+        display: block
+    }
+
+}
