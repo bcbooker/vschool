@@ -7,7 +7,7 @@ img#logo{
     margin-left:90px
 }
 div#calc{
-    width:550px;
+    width:650px;
     height:auto;
     margin:50px auto 0;
     padding:50px;
@@ -44,7 +44,6 @@ div#multiply {
 
 /* Input Settings */
 input#add1{
-/* background-image:url(../images/icon_name.png); */
 background-repeat:no-repeat;
 background-position:6px;
 border:1px solid #DADADA;
@@ -60,7 +59,6 @@ margin-right: 15px;
 
 }
 input#add2{
-background-image:url(../images/email.png);
 background-repeat:no-repeat;
 background-position:6px;
 border:1px solid #DADADA;
@@ -75,7 +73,6 @@ border-radius:5px;
 margin-right: 15px;
 }
 input#subtract1{
-background-image:url(../images/mobile.png);
 background-repeat:no-repeat;
 background-position:6px;
 border:1px solid #DADADA;
@@ -91,7 +88,6 @@ margin-right: 15px;
 }
 
 input#subtract2{
-    background-image:url(../images/mobile.png);
     background-repeat:no-repeat;
     background-position:6px;
     border:1px solid #DADADA;
@@ -108,7 +104,6 @@ input#subtract2{
 
 
 input#multiply1{
-background-image:url(../images/home.png);
 background-repeat:no-repeat;
 background-position:6px;
 border:1px solid #DADADA;
@@ -124,7 +119,6 @@ margin-right: 15px;
 }
 
 input#multiply2{
-    background-image:url(../images/home.png);
     background-repeat:no-repeat;
     background-position:6px;
     border:1px solid #DADADA;

@@ -4,3 +4,4 @@
 // grab all form and its elements (div id, or form id) for js
 // build out button functionality for add,sub,multi
 // build out div to display the result of the button functionality
+// create a new element in js and try to append it to the dom
