@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Add checkbox option for dietary restrictions -->
+
+
+    <div class="background">
+        <!-- Wrapper -->
+        <div class="container">
+
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                  <!-- Dots -->
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span>BOOKER AIRLINES</span>
+                  <BR></BR>
+                  <span> TRAVEL FORM</span>
+                </div>
+              </div>
+
+              <div class="screen-body-item">
+
+            <form name=myForm>
+                <div class="app-form">
+                  <!-- First Name -->
+                  <div class="app-form-group">
+                    <input type="text" class="app-form-control" placeholder="FIRST NAME" name="firstName" > 
+                  </div>
+                  <!-- Last Name -->
+                  <div class="app-form-group">
+                    <input type="text" class="app-form-control" placeholder="LAST NAME" name="lastName" >
+                  </div>
+                  <!-- Age -->
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="AGE" name="age" >
+                  </div>
+                  <!-- Gender Select -->
+                  <div id="radio" class="app-form-group">
+                    Non-Binary : <input type="radio" name="gender" value="Non-Binary" class="app-form-control" placeholder="GENDER" >
+                    Male : <input type="radio" name="gender" value="Male" class="app-form-control" placeholder="GENDER" >
+                    Female : <input type="radio" name="gender" value="Female" class="app-form-control" placeholder="GENDER" >
+                  </div>
+                  <!-- Drop Down -->
+                  <select class="app-form-group" name="city"> 
+                    <option value="Chicago">Chicago</option>
+                    <option value="Omaha">Omaha</option>    
+                    <option value="San Francisco">San Francisco</option>
+                    </select>
+
+                  <div name="checkbox" class="app-form-group" id="test2">
+                    
+                    <input type="checkbox" id="test1" value="Paleo" name="foodRestriction" class="app-form-control" placeholder="Dietary restriction" >
+                    <label id="a" for="test1">bobobobob</label>
+                   
+
+                  <!-- Message -->
+                  <div class="app-form-group message" >
+                    <input class="diet" type="checkbox" name="vegan" id="vegan" value="Vegan">
+                      <label for="vegan">Vegan</label>
+                        <br>
+                    <input class="diet" type="checkbox" name="gluten" id="gluten" value="Gluten-free">
+                      <label for="gluten">Gluten-free</label>
+                        <br>
+                    <input class="diet" type="checkbox" name="paleo" id="paleo" value="Paleo">
+                      <label for="paleo">Paleo, jk you eat what we give you!</label>
+                    </div>
+                  <div class="app-form-group buttons">
+                    <!--  -->
+                    <button id="submit" class="app-form-button">SUBMIT</button>
+                  </div>
+                  </form>
+                  <script src="index.js"></script>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space">
+        </div>
+      </div>
+      
+</body>
+</html>

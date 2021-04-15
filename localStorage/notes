@@ -1,0 +1,11 @@
+// localStorage.setItem("name", "Brandon")
+
+// const name = localStorage.getItem("name")
+
+// console.log(name)
+
+// localStorage.setItem("array", JSON.stringify(["goebbels", "Speer", "Goring"]))
+
+// const array = JSON.parse(localStorage.getItem("array"))
+
+// console.log(array[1])
