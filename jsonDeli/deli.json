@@ -1,0 +1,16 @@
+{"appetizers":[{"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"}, 
+               {"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"}],
+
+"cold sandwhiches":[{"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"},
+                    {"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"}],
+
+"hot sandwhiches":[{"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"},
+                   {"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"}],
+
+"desserts":[{"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"},
+            {"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"}],
+
+"drinks":[{"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"},
+          {"name": "mini-dogs", "ingredients": ["hotdogs","Buns","ketchup","mustard"], "description":"A declious mini hotdog!"}]
+
+}

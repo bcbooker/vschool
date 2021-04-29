@@ -1,0 +1,75 @@
+// ############################################################################################################################################################################
+// FRONT END
+// background will be grey for professional look and feel
+// input box should be shadowed, styled and include the + sign to add 'todos' for added style feel
+// all todos should including a transition display for added style
+// colors are dark-grey, white, red
+// [wrapper div]
+//     - [input box]
+//     - [li style display]
+//              - [delete icon(removes div)]
+//              - [completed icon(strikethrough)]
+// ############################################################################################################################################################################
+// 
+
+// GET //
+// ############################################################################################################################################################################
+
+// using query selector, saved all the todo-list table elements to variables
+// I'm am going to use querySelectors because I plan to make changes to elements of CSS. Queryselector allows me to use the '#' syntax
+// make an api call using the Vschool api
+// create function to show the data when page first loads. See below...
+
+// want to use axios to initiate the get request for the data, from the API
+// then, manipulate that said data. Considered that most data will be in array format, we can use a loop, and possibly .map through the information.
+// should look something like :
+
+// axios.get("https://api.vschool.io/scrimbalessons/todo")
+//     .then(response => {
+//         for(let i = 0; i < response.data.length; i++){
+//             const h1 = document.createElement('h1')
+//             h1.textContent = response.data[i].title
+//             document.body.appendChild(h1)
+//         }
+//     })
+//     .catch(error => console.log(error))
+
+// Get One
+// axios.get("https://api.vschool.io/scrimbalessons/todo/5d8bd511ee91575e6d49e06e")
+//     .then(response => console.log(response.data))
+//     .catch(error => console.log(error))
+//
+
+// POST //
+// ############################################################################################################################################################################
+
+// two important portions of each request are .then(response), and .catch(error)
+// once the .response is recieved via axios and verified (axios does this under the hood), the response is automatically parsed and saved into the response arguement
+
+
+        // If a todo item is complete, it should have a strikethrough line on it
+        // Images should be displayed as images if there are any
+
+
+// create function that adds to api by doing a POST request
+    // A createTodo function that takes one todo and inserts it to the DOM is very userful
+    // title
+    // price 
+    // description 
+    // img
+            // var newTodo = {
+//     title: "Title here", // this one is the only thing that is actually required
+//     description: "Description here",
+//     price: 20, // Must be a number of some kind (integer or float)
+//     imgUrl: "http://www.example.com/some-link-to-a-cool-photo.jpg",
+//     completed: false // must be a boolean (true or false). If nothing provided, defaults to false.
+// };
+
+// create function that deletes from the api using a DELETE request
+
+// create a function for a put request to edit if the todo is striked out of completed
+
+// ############################################################################################################################################################################
+// Hints:
+
+// Use postman to get those first few todos in there with some images so you can style your list!

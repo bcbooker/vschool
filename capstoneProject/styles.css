@@ -1,0 +1,50 @@
+/* Remove all basic styling */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: linear-gradient(130deg,#402993,#521379);
+    color: white;
+    font-family: "Poppins, sans-serif";
+    min-height: 100vh
+}
+
+header{
+    font-size: 1.5rem;
+}
+
+header,form {
+min-height: 20vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+form input, form button{
+    padding: .5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
+
+form button{
+    /* negative margin to remove space between input and button */
+    margin-left: -1rem;
+    color:#402993;
+    background: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+/* On hover turns purple */
+/* Transition from above is inherited on hover */
+form button:hover{
+    background: #402993;
+    color: white;
+}
+
