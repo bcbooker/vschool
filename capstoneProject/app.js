@@ -3,9 +3,15 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 
+// Unorganized variables
+const completedTodoMark = {
+        completed: "true"
+}
+
 // event handlers
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
+todoList.addEventListener('click', checkMark);
 
 
 
@@ -20,12 +26,42 @@ todoList.addEventListener('click', deleteCheck);
 function deleteCheck(e){
         const item = e.target;
 
-        //delete 
+        //delete todo
         if(item.classList[0] === "remove-btn"){
                 const todo = item.parentElement;
-                todo.remove();
+                // animation
+                todo.classList.add("fall")
+                todo.addEventListener('transitionend',function(){
+                        //execute removing the element after the animation has transitioned
+                        todo.remove();
+                })
+                
         }
         console.log(item.classList)
+
+        // completed
+        if(item.classList[0] === "complete-btn"){
+                const todo = item.parentElement;
+                todo.classList.toggle("completed");
+        }
+}
+
+// Captures the click at the current classList location and
+function checkMark(e){
+        const item = e.target;
+        
+        axios.put("https://api.vschool.io/brandonbooker/todo/", completedTodoMark)
+        .then(response => console.log(response.data))
+        .catch(error => console.log(error))
+
+        if(item.classList[0] === "complete-btn"){
+                const todo = item.parentElement;
+                if(todo.classList.toggle("completed")){
+                        
+                }
+        }
+
+        // completed
 }
 
 
@@ -88,84 +124,87 @@ function addTodo(event){
         
 }
 
-
-
-// const xhr = new XMLHttpRequest()
-// // the following references xhr(open) parameters:
-// // 'the method' // 'the url' // 'do we want async functionality?'
-// xhr.open("GET", "https://api.vschool.io/pokemon", true)
-// xhr.send()
-
-
-// xhr.onreadystatechange = function(){
-//         if(xhr.readyState === 4 && xhr.status === 200){
-//             console.log(xhr.responseText)
-//             console.log(typeof xhr.responseText)
-    
-//             // taking the JSON response data, and setting it to equal the xhr.responsText
-//             // then after, taking that JSON data and parsing it-by saving it into a variable called 'data'
+// what if we try to have the put request listen for if strikedthrough is true for a current div, that it sends to server completed.
 //             const JSONdata = xhr.responseText
 //             const data = JSON.parse(JSONdata)
 //             console.log(data.objects)
 //             console.log(data.objects[0].pokemon[0].name)
 //             showData(data.objects[0].pokemon)
-//         }
-//     }
 
 
-// function showData(arr){
-//         // function to loop through the array, and inject the text into the DOM
-//         for(let i = 0; i < arr.length; i++){
-//         // TodoDiv creation using classList
-//         const todoDiv = document.createElement("div");
-//         todoDiv.classList.add('todo');
-//         // creating LI
-//         const newTodo = document.createElement('li');
-//         // the text of the newTodo
-//         newTodo.innerText = arr[i].name; // will need to capture input here
-//         // adding a new class called 'todo-item'
-//         newTodo.classList.add('todo-item');
+// GET REQUEST
+axios.get("https://api.vschool.io/brandonbooker/todo/")
+.then(function(response){
+        let todoList = response.data
+        console.log(todoList)
+        console.log(todoList[0].title)
+        console.log(todoList[0].completed)
+        console.log(todoList[0].price)
+        console.log(todoList[0].description)
+        showData(todoList)
+})
 
-//         //appending newTodo to the todoDiv using appendChild node
-//         todoDiv.appendChild(newTodo);
+axios.put("https://api.vschool.io/brandonbooker/todo/60902463ee6f8d3fc3fed64b", completedTodoMark)
+        .then(response => console.log(response.data))
+        .catch(error => console.log(error))
+
+// How the data will populate in the todoList Table
+function showData(arr){
+        // function to loop through the array, and inject the text into the DOM
+        for(let i = 0; i < arr.length; i++){
+        // TodoDiv creation using classList
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add('todo');
+        // creating LI
+        const newTodo = document.createElement('li');
+        // the text of the newTodo
+        newTodo.innerText = arr[i].title; // will need to capture input here
+        // adding a new class called 'todo-item'
+        newTodo.classList.add('todo-item');
+
+        //appending newTodo to the todoDiv using appendChild node
+        todoDiv.appendChild(newTodo);
 
 
 
-//         //completion button
-//         const completedButton = document.createElement('button');
+        //completion button
+        const completedButton = document.createElement('button');
 
-//         // innerHTML to show checkmark
-//         completedButton.innerHTML = '<i class="fas fa-check"></i>';
+        // innerHTML to show checkmark
+        completedButton.innerHTML = '<i class="fas fa-check"></i>';
 
-//         // add a class to compelted button called 'complete-btn'
-//         completedButton.classList.add("complete-btn");
+        // add a class to compelted button called 'complete-btn'
+        completedButton.classList.add("complete-btn");
 
-//         //appending button to div
-//         todoDiv.appendChild(completedButton);
+        //appending button to div
+        todoDiv.appendChild(completedButton);
 
 
 
-//         //remove button
-//         const removeButton = document.createElement('button')
+        //remove button
+        const removeButton = document.createElement('button')
 
-//         // innerHTML to show checkmark
-//         removeButton.innerHTML = '<i class="fas fa-trash"></i>';
+        // innerHTML to show checkmark
+        removeButton.innerHTML = '<i class="fas fa-trash"></i>';
         
-//         // add a class to compelted button called 'complete-btn'
-//         removeButton.classList.add("remove-btn");
+        // add a class to compelted button called 'complete-btn'
+        removeButton.classList.add("remove-btn");
         
-//         //appending button to div
-//         todoDiv.appendChild(removeButton);
+        //appending button to div
+        todoDiv.appendChild(removeButton);
 
 
-//         // append to listener
-//         todoList.appendChild(todoDiv);
-//         }
+        // append to listener
+        todoList.appendChild(todoDiv);
+        }
+
+        // clear values
+        todoInput.value = "";
       
-      
-        
-//     }
+
+    }
 
 
 
 // stopped @ 36:32
+
