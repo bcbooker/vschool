@@ -19,6 +19,9 @@ function check2(arr){
 }
 //checkmark
 function Check(e, id){
+        axios.put("https://api.vschool.io/brandonbooker/todo/", completedTodoMark)
+                .then(response => console.log(response.data))
+                .catch(error => console.log(error))
         // id = id of the todo item
         // make PUT axios request change the value of completed property
         // axios.put
@@ -67,9 +70,7 @@ function deleteC(e, id){
 // function checkMark(e){
 //         const item = e.target;
         
-//         axios.put("https://api.vschool.io/brandonbooker/todo/", completedTodoMark)
-//         .then(response => console.log(response.data))
-//         .catch(error => console.log(error))
+
 
 //         if(item.classList[0] === "complete-btn"){
 //                 const todo = item.parentElement;
@@ -261,28 +262,3 @@ function showData(arr){
 
 
 // stopped @ 36:32
-
-
-
-// Part 3 - PUT Part 1
-// done Each todo will have a checkbox where it can be marked complete or incomplete
-// Checking the checkbox should update the database 
-//When the checkbox is checked completed will be true and the strikethrough will occur 
-// input.addEventListener("change", function() {
-//         const completedUpdate = {
-//             title: todoList.title,
-//             completed: true,
-//         }
-//         const id = todoList._id
-//         axios.put("https://api.vschool.io/larissabrown/todo/"+ id, completedUpdate)
-//         .then(response => console.log(response.data))
-//         .catch(error => console.log(error))
-//     })
-// // Part 4 - DELETE
-// // A user will be able to delete todos (this is different from marking a todo as "completed")
-// // Each todo should be rendered with a button marked "X" or "Delete" that when clicked, will delete the Todo
-// buttonDelete.addEventListener("click", function() {
-//     axios.delete("https://api.vschool.io/larissabrown/todo/"+ id) 
-//         .then(response => console.log(response.data))
-//         .catch(error => console.log(error))
-// })
