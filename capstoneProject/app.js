@@ -6,6 +6,9 @@ const todoList = document.querySelector('.todo-list');
 
 // Unorganized variables
 
+// if(arr[i].completed === true){
+//         console.log("tewt")
+// }
 
 
 
@@ -14,28 +17,61 @@ console.log
 
 // todoList.addEventListener('click', checkMark);
 // functions
-function check2(arr){
-        
-}
+// function clearList(){
+//         const el = document.getElementById('todo-list')
+//         while(el.firstChild){
+//             el.removeChild(el.firstChild)
+//         }
+//     }
+    
+// get data
+function getData(){
+        axios.get("https://api.vschool.io/brandonbooker/todo")
+            .then(res => showData(res.data))
+            .catch(err => console.log(err))
+    }
+
+    getData()
 //checkmark
 function Check(e, id){
-        axios.put("https://api.vschool.io/brandonbooker/todo/", completedTodoMark)
-                .then(response => console.log(response.data))
-                .catch(error => console.log(error))
+
+        // if(item.classList.toggle("completed") === true){
+
+        // }
+        
+
         // id = id of the todo item
         // make PUT axios request change the value of completed property
         // axios.put
         console.log(id)
         const item = e.target;
+        
         // console.log(item.classList)
         // do the put request here
         // then update the values
         // completed
         if(item.classList[0] === "complete-btn"){
                 const todo = item.parentElement;
+                console.log(todo)
+
                 todo.classList.toggle("completed");
-                // console.log(todo.classList[1])
-                // console.log(item)
+                // console.log(todo.classList)
+                
+
+               
+        }
+        if(item.classList.toggle("completed") === false){
+                
+                console.log("hello")
+                axios.put("https://api.vschool.io/brandonbooker/todo/" + id, {completed: false})
+                        .then(response => console.log(response.data))
+                        .catch(error => console.log(error))
+        }
+        else { 
+                axios.put("https://api.vschool.io/brandonbooker/todo/" + id, {completed: true})
+                .then(response => console.log(response.data))
+                .catch(error => console.log(error))
+                console.log("goodbye")
         }
 }
 
@@ -51,91 +87,79 @@ function deleteC(e, id){
                 todo.classList.add("fall")
                 todo.addEventListener('transitionend',function(){
                         //execute removing the element after the animation has transitioned
+                        axios.delete("https://api.vschool.io/brandonbooker/todo/" + id)
                         todo.remove();
                 })
                 
         }
 
 }
-// event listener checks for the click on remove-button
-// after click on the to-do list div
-// todoList listens for a click event
-// on click, item becomes the target for the events
-// if statement, to 'listen' for if the element clicked on has a classList at array[0] named 'remove-btn'
-// assign the todo variable as the parent element
-// this then allows us to remove the parent element of remove-btn because its assigned to a variable
 
 
-// Captures the click at the current classList location and
-// function checkMark(e){
-//         const item = e.target;
-        
-
-
-//         if(item.classList[0] === "complete-btn"){
-//                 const todo = item.parentElement;
-//                 if(todo.classList.toggle("completed")){
-                        
-//                 }
-//         }
-
-//         // completed
-// }
-
-// todoList function(GET)
 
 // addTodo function (POST)
 function addTodo(event){
         event.preventDefault();
         console.log("test");
 
-        // TodoDiv creation using classList
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add('todo');
-        // creating LI
-        const newTodo = document.createElement('li');
-        // the text of the newTodo
-        newTodo.innerText = todoInput.value; // will need to capture input here
-        // adding a new class called 'todo-item'
-        newTodo.classList.add('todo-item');
+        const newTodo = {
+                title: todoInput.value , // this one is the only thing that is actually required
+                description: "Description here",
+                price: 30, // Must be a number of some kind (integer or float)
+                completed: false // must be a boolean (true or false). If nothing provided, defaults to false.
+            };
 
-        //appending newTodo to the todoDiv using appendChild node
-        todoDiv.appendChild(newTodo);
+            axios.post("https://api.vschool.io/brandonbooker/todo", newTodo)
+                .then(res => getData())
+                .catch(error => console.log(error))
 
+        // // TodoDiv creation using classList
+        // const todoDiv = document.createElement("div");
+        // todoDiv.classList.add('todo');
+        // // creating LI
+        // const newTodo = document.createElement('li');
+        // // the text of the newTodo
+        // newTodo.innerText = todoInput.value; // will need to capture input here
+        // // adding a new class called 'todo-item'
+        // newTodo.classList.add('todo-item');
 
-
-        //completion button
-        const completedButton = document.createElement('button');
-
-        // innerHTML to show checkmark
-        completedButton.innerHTML = '<i class="fas fa-check"></i>';
-
-        // add a class to compelted button called 'complete-btn'
-        completedButton.classList.add("complete-btn");
-
-        //appending button to div
-        todoDiv.appendChild(completedButton);
+        // //appending newTodo to the todoDiv using appendChild node
+        // todoDiv.appendChild(newTodo);
 
 
 
-        //remove button
-        const removeButton = document.createElement('button')
+        // //completion button
+        // const completedButton = document.createElement('button');
 
-        // innerHTML to show checkmark
-        removeButton.innerHTML = '<i class="fas fa-trash"></i>';
+        // // innerHTML to show checkmark
+        // completedButton.innerHTML = '<i class="fas fa-check"></i>';
+
+        // // add a class to compelted button called 'complete-btn'
+        // completedButton.classList.add("complete-btn");
+
+        // //appending button to div
+        // todoDiv.appendChild(completedButton);
+
+
+
+        // //remove button
+        // const removeButton = document.createElement('button')
+
+        // // innerHTML to show checkmark
+        // removeButton.innerHTML = '<i class="fas fa-trash"></i>';
         
-        // add a class to compelted button called 'complete-btn'
-        removeButton.classList.add("remove-btn");
+        // // add a class to compelted button called 'complete-btn'
+        // removeButton.classList.add("remove-btn");
         
-        //appending button to div
-        todoDiv.appendChild(removeButton);
+        // //appending button to div
+        // todoDiv.appendChild(removeButton);
 
 
-        // append to listener
-        todoList.appendChild(todoDiv);
+        // // append to listener
+        // todoList.appendChild(todoDiv);
 
-        // clear values
-        todoInput.value = "";
+        // // clear values
+        // todoInput.value = "";
         
 }
 
@@ -156,7 +180,9 @@ axios.get("https://api.vschool.io/brandonbooker/todo/")
         // console.log(todoList[0].completed)
         // console.log(todoList[0].price)
         // console.log(todoList[0].description)
-        showData(todoList)
+        // showData(todoList)
+        
+        
         
 
         for(i = 0; i < todoList.length; i++){
@@ -170,10 +196,11 @@ axios.get("https://api.vschool.io/brandonbooker/todo/")
 
 })
 
-const completedTodoMark = {
-        completed: "true"
-}
-
+// const completedTodoMark = {
+//        completed: "true"
+// }
+ // newTodo.addEventListener('click), function(e) copy ^
+       todoButton.addEventListener('click', addTodo);
 // PUT REQUEST
 // axios.put("https://api.vschool.io/brandonbooker/todo/60902463ee6f8d3fc3fed64b", completedTodoMark)
 //         .then(response => console.log(response.data))
@@ -181,10 +208,10 @@ const completedTodoMark = {
 
 // How the data will populate in the todoList Table
 function showData(arr){
-        
+        document.getElementById('removelist').innerHTML = ""
         // function to loop through the array, and inject the text into the DOM
         for(let i = 0; i < arr.length; i++){
-
+                
         // event handlers
       
         // TodoDiv creation using classList
@@ -200,9 +227,8 @@ function showData(arr){
         //todoList.addEventListener('click', Check);
         
         
-        // newTodo.addEventListener('click), function(e) copy ^
-         todoButton.addEventListener('click', addTodo);
-        // todoList.addEventListener('click', deleteC);
+       
+     
         
  
 
@@ -218,9 +244,12 @@ function showData(arr){
         // innerHTML to show checkmark
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
         
+      
 
         completedButton.addEventListener('click', function(e) {
                 Check(e, arr[i]._id)
+                
+
                 console.log(`offf ${arr[i]._id}`)
  })
 
@@ -230,6 +259,7 @@ function showData(arr){
         //appending button to div
         todoDiv.appendChild(completedButton);
 
+       
 
 
         //remove button
@@ -251,6 +281,8 @@ function showData(arr){
 
         // append to listener
         todoList.appendChild(todoDiv);
+        
+        
         }
 
         // clear values
@@ -258,6 +290,9 @@ function showData(arr){
 
 
     }
+
+    
+
 
 
 
