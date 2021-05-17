@@ -16,18 +16,11 @@ function getData(){
             .catch(err => console.log(err))
     }
 
-    getData()
+// show data
+getData()
+
 // CHECKMARK - COMPLETION
 function Check(e, id){
-
-        // if(item.classList.toggle("completed") === true){
-
-        // }
-        
-
-        // id = id of the todo item
-        // make PUT axios request change the value of completed property
-        // axios.put
         console.log(id)
         const item = e.target;
         
@@ -41,22 +34,19 @@ function Check(e, id){
 
                 todo.classList.toggle("completed");
                 // console.log(todo.classList)
-                
-
-               
         }
+
         if(item.classList.toggle("completed") === false){
-                
                 console.log("hello")
                 axios.put("https://api.vschool.io/brandonbooker/todo/" + id, {completed: false})
                         .then(response => console.log(response.data))
                         .catch(error => console.log(error))
         }
-        else { 
+        else {
                 axios.put("https://api.vschool.io/brandonbooker/todo/" + id, {completed: true})
-                .then(response => console.log(response.data))
-                .catch(error => console.log(error))
-                console.log("goodbye")
+                        .then(response => console.log(response.data))
+                        .catch(error => console.log(error))
+                        console.log("goodbye")
         }
 }
 
@@ -68,16 +58,15 @@ function deleteC(e, id){
         if(item.classList[0] === "remove-btn"){
                 const todo = item.parentElement;
                 // console.log(item)
-                // animation
+                // becomes part of the 'fall' animation classList
                 todo.classList.add("fall")
+                // eventlistener to wait until the animation has 'transitioned', execute the requirements of the function
                 todo.addEventListener('transitionend',function(){
                         //execute removing the element after the animation has transitioned
                         axios.delete("https://api.vschool.io/brandonbooker/todo/" + id)
                         todo.remove();
                 })
-                
         }
-
 }
 
 // addTodo function (POST)
@@ -86,9 +75,9 @@ function addTodo(event){
         console.log("test");
 
         const newTodo = {
-                title: todoInput.value , // this one is the only thing that is actually required
-                description: "Description here",
-                price: 30, // Must be a number of some kind (integer or float)
+                title: todoInput.value , 
+                description: "Description here", // will add more fields later 
+                price: 30, // will add more fields later 
                 completed: false // must be a boolean (true or false). If nothing provided, defaults to false.
             };
 
@@ -102,20 +91,11 @@ axios.get("https://api.vschool.io/brandonbooker/todo/")
 .then(function(response){
         let todoList = response.data
         // console.log(todoList[0]._id)
-        // console.log(todoList[0].title)
-        // console.log(todoList[0].completed)
-        // console.log(todoList[0].price)
-        // console.log(todoList[0].description)
         // showData(todoList)
-        
-        
-        
 
         for(i = 0; i < todoList.length; i++){
                 const id = todoList[i]._id
                 console.log(id)
-
-        
         }
 })
 
@@ -152,7 +132,7 @@ function showData(arr){
         completedButton.addEventListener('click', function(e) {
                 Check(e, arr[i]._id)
                 console.log(`offf ${arr[i]._id}`)
- })
+        })
 
         // add a class to compelted button called 'complete-btn'
         completedButton.classList.add("complete-btn");
@@ -188,3 +168,7 @@ function showData(arr){
 
 
     }
+
+
+    // user rereshes page must show that the completed is style properly
+    
