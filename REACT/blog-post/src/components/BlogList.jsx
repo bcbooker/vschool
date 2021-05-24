@@ -8,9 +8,6 @@ function BlogList(){
         <BlogPost
         
         post = {post}
-    
-        
-    
         />)
 
     return(

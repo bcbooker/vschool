@@ -8,7 +8,7 @@ function App(){
     return(
         <div>
             <Header  />
-            <BlogList  style={{alignItems: "center"}} />
+            <BlogList  />
             <h1>Test JS From App</h1>
             <Footer />
         </div>

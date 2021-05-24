@@ -1,0 +1,22 @@
+.container {
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 240px);
+  grid-template-rows: repeat(2, 240px);
+  grid-gap: 1.4px
+}
+
+.cell {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: black;
+}
+
+.appc {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
