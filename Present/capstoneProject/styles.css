@@ -1,0 +1,114 @@
+/* Remove all basic styling */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: linear-gradient(130deg,#402993,#521379);
+    color: white;
+    font-family: "Poppins, sans-serif";
+    min-height: 100vh
+}
+
+header{
+    font-size: 1.5rem;
+}
+
+header,form {
+min-height: 20vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+form input, form button{
+    padding: .5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
+
+form button{
+    /* negative margin to remove space between input and button */
+    margin-left: -1rem;
+    color:#402993;
+    background: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+/* On hover turns purple */
+/* Transition from above is inherited on hover */
+form button:hover{
+    background: #402993;
+    color: white;
+}
+
+/* container */
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 20%;
+    list-style: none;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: white;
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.todo li{
+    flex: 1;
+}
+
+.remove-btn, .complete-btn{
+    background: #402993;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    /* remve white spaces */
+    margin-left: -.2rem;
+}
+
+/* remove whitespaces */
+.remove-btn {
+    margin-right: -.5rem;
+}
+
+.complete-btn {
+    background: rgb(73,204,73);
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0
+}
