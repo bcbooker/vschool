@@ -11,6 +11,12 @@ function Badge (props){
              </h1>
 
              <h1> Last Name : {props.lastName}</h1>
+
+             <p>{props.email}</p>
+             <p>{props.phone}</p>
+             <p>{props.poBirth}</p>
+             <p>{props.favFood}</p>
+             <p>{props.info}</p>
         </div>
     )
 }

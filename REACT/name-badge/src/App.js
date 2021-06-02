@@ -13,7 +13,7 @@ class App extends Component {
       <div className="App">
         <h1>Hello from app.js</h1>
         <BadgeForm />
-        <Badge />
+        
       </div>
     );
 

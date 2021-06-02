@@ -79,6 +79,11 @@ class BadgeForm extends Component {
         key = {user}
         firstName = {user.firstName}
         lastName = {user.lastName}
+        email = {user.email}
+        phone = {user.phone}
+        poBirth = {user.poBirth}
+        favFood = {user.favFood}
+        info = {user.info}
         />
         )
        
@@ -89,7 +94,7 @@ class BadgeForm extends Component {
 
         {/* First Name */}
         <input
-        className="inputs"
+        className="inputs2"
         type="text"
         value={this.state.firstName}
         onChange={this.handleChange}
@@ -111,7 +116,7 @@ class BadgeForm extends Component {
       
         {/* Email */}
         <input
-        className="inputs"
+        className="inputs2"
         type="text"
         value={this.state.email}
         onChange={this.handleChange}
@@ -133,7 +138,7 @@ class BadgeForm extends Component {
 
         {/* Phone */}
         <input
-        className="inputs"
+        className="inputs2"
         type="number"
         value={this.state.phone}
         onChange={this.handleChange}
@@ -152,6 +157,7 @@ class BadgeForm extends Component {
         />
 
         <br></br>
+        <br></br>
 
         <textarea
         id="info"
@@ -167,9 +173,9 @@ class BadgeForm extends Component {
 
         {/* <p>{this.state.firstName}</p> */}
         {namesSubmitted}
-       <h1> {this.state.users.firstName} </h1>
-        {this.state.users.lastName}
-        {this.state.isSubmitted && <h1>Submittied</h1>}
+       {/* <h1> {this.state.users.firstName} </h1> */}
+        {/* {this.state.users.lastName} */}
+        {/* {this.state.isSubmitted && <h1>Submittied</h1>} */}
 
       </div>
         
