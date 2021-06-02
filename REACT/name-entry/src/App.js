@@ -8,7 +8,6 @@ class App extends Component {
 
     this.state = {
       firstName : "",
-      lastName: "",
       names : ["s"]
     }
 
