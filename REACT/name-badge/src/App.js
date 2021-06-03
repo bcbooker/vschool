@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './App.css';
 import BadgeForm from "./components/BadgeForm"
-import Badge from "./components/Badge"
+
 
 class App extends Component {
   
@@ -11,7 +11,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <h1>Hello from app.js</h1>
+        <h1>The badge</h1>
         <BadgeForm />
         
       </div>

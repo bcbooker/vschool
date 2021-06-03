@@ -1,3 +1,30 @@
 .inputs {
+    margin-top: 30px;
     margin-left: 150px;
+}
+
+.form {
+    background-color: white;
+    width: 600px;
+    text-align: center;    
+    align-items: center;
+    margin: 0 auto; 
+    width: 750px;
+    height: 300px;
+    
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}
+
+.grid > span {
+    padding: 15px 20px;
+
 }

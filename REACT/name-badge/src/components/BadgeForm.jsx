@@ -74,9 +74,10 @@ class BadgeForm extends Component {
 
 
   render() {
-    const namesSubmitted = this.state.users.map(user => 
+    // can use a index in the map, as a key.
+    const namesSubmitted = this.state.users.map( (user, index) => 
         <Badge
-        key = {user}
+        key = {index}
         firstName = {user.firstName}
         lastName = {user.lastName}
         email = {user.email}
@@ -90,7 +91,7 @@ class BadgeForm extends Component {
     return (
       <div> 
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
 
         {/* First Name */}
         <input
@@ -160,6 +161,8 @@ class BadgeForm extends Component {
         <br></br>
 
         <textarea
+        rows="5"
+        cols="60"
         id="info"
         name="info"
         value={this.state.info}
