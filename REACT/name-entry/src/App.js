@@ -14,14 +14,12 @@ class App extends Component {
     // binding this to methods
     this.handleChange = this.handleChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
-
   }
 
   // handleChange method 
   handleChange = event =>{
     const {name,value} = event.target
     this.setState({[name]: value})
-    
   }
 
   onSubmit(event){
@@ -59,7 +57,6 @@ class App extends Component {
         <header className="App-header">
           <h1> Greets from app.js</h1>
          
-          
           <Post 
           names={this.state.names}
           />
@@ -78,15 +75,12 @@ class App extends Component {
           />
 
           <br />
-      <button>Submit</button>
-      </form>
-          
-          
+        <button>Submit</button>
+        </form>
         </header>
       </div>
     );
   }
-  
 }
 
 export default App;
