@@ -14,13 +14,14 @@ class BadgeForm extends Component {
               favFood: "",
               info: "",
               users: [],
-              isSubmitted: false
+              // isSubmitted: false
           }
 
           // binding methods to (this)
           this.handleChange = this.handleChange.bind(this)
           this.handleSubmit = this.handleSubmit.bind(this)
-          this.print = this.print.bind(this)
+          // this.print = this.print.bind(this)
+          this.handleClear = this.handleClear.bind(this)
 
     }
 
@@ -30,13 +31,25 @@ class BadgeForm extends Component {
     this.setState({[name] : value})
     
   }
+    // we are just clearing inputs in [state]
+   handleClear(event){
+    const {name,value} = event.target
+      this.setState({
+        [name]: ""
+        
+      
+      })
+
+    }
 
   print(){
+    // test print functuon to ensure that the handle submit function works
       console.log("on submit")
   }
 
   handleSubmit(event) {
       event.preventDefault();
+
     //preventDefault stuff
     this.setState(prevState => {
         return{
@@ -52,12 +65,40 @@ class BadgeForm extends Component {
                 //conditional render for onsubmit
                 isSubmitted: true
             }]
-
             
         }
-      
     //clear the value of your form's inputs through state
+        
+    
     })
+
+   
+
+    this.setState(prevState => {
+      return{
+          users: [...prevState.users, 
+              {
+              firstName: this.state.firstName, 
+              lastName: this.state.lastName, 
+              email: this.state.email, 
+              phone: this.state.phone, 
+              poBirth: this.state.poBirth,
+              favFood: this.state.favFood,
+              info: this.state.info,
+              //conditional render for onsubmit
+              isSubmitted: true
+          }]
+           
+      }
+  //clear the value of your form's inputs through state
+    
+  
+  })
+  console.log(this.firstname)
+  console.log(event.target)
+
+  // this.firstname.value = "";
+
     }
 
 
@@ -95,7 +136,11 @@ class BadgeForm extends Component {
 
         {/* First Name */}
         <input
+        id="firstname"
+        defaultValue="Reset"
         className="inputs2"
+        minlength = "3"
+        required 
         type="text"
         value={this.state.firstName}
         onChange={this.handleChange}
@@ -105,7 +150,10 @@ class BadgeForm extends Component {
 
         {/* Last Name */}
         <input
+        id="lastname"
         className="inputs"
+        minlength = "3"
+        required 
         type="text"
         value={this.state.lastName}
         onChange={this.handleChange}
@@ -117,7 +165,10 @@ class BadgeForm extends Component {
       
         {/* Email */}
         <input
+        id="email"
         className="inputs2"
+        minlength = "3"
+        required 
         type="text"
         value={this.state.email}
         onChange={this.handleChange}
@@ -127,7 +178,10 @@ class BadgeForm extends Component {
 
         {/* Place of Birth */}
         <input
+        id="poBirth"
         className="inputs"
+        minlength = "3"
+        required 
         type="text"
         value={this.state.poBirth}
         onChange={this.handleChange}
@@ -139,7 +193,10 @@ class BadgeForm extends Component {
 
         {/* Phone */}
         <input
+        id="phone"
         className="inputs2"
+        minlength = "3"
+        required 
         type="number"
         value={this.state.phone}
         onChange={this.handleChange}
@@ -149,7 +206,10 @@ class BadgeForm extends Component {
 
         {/* Favorite Food */}
         <input
+        id="favfood"
         className="inputs"
+        minlength = "3"
+        required 
         type="text"
         value={this.state.favFood}
         onChange={this.handleChange}
