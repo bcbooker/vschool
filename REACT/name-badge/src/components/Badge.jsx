@@ -1,52 +1,42 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button';
+
 
 function Badge (props){
     console.log(props)
         
     
     return(
-        <div>
-           
-        <div className="grid">
-            <span>
-                <strong>First Name</strong>
-            </span>
-
-            <span>
-                <strong>Last Name </strong>
-            </span>
-
-            <span>{props.firstName}</span>
-            <span>{props.lastName}</span>
-
-            <span>
-                <strong>Email </strong>
-            </span>
-
-            <span>
-                <strong>Phone</strong>
-            </span>
-
-            <span>{props.email}</span>
-            <span>{props.phone}</span>
-
-            <span>
-                <strong>Place of Birth </strong>
-            </span>
-
-            <span>
-                <strong>Favorite Food</strong>
-            </span>
-
-            <span>{props.poBirth}</span>
-            <span>{props.favFood}</span>
+        <div style={{marginLeft: "10px"}}>
             <br></br>
+
+            <Card style={{ width: '22rem'}}>
+            <Card.Title>{props.firstName}, {props.lastName} </Card.Title>
+            
+            <Card.Body>
+                    <Card.Text>
+                        <span style={{fontWeight: "bold"}}>Phone</span>: {props.phone}
+                            <br></br>
+                                <span style={{fontWeight: "bold"}}>Email</span>: {props.email}
+                                    <br></br>
+                                        <span style={{fontWeight: "bold"}}>Place of Birth</span>: {props.poBirth}
+                                            <br></br>
+                                                <span style={{fontWeight: "bold"}}>Favorite Food</span>: {props.favFood}
+                                                    <br></br>
+                                                        <p style={{fontStyle: "italic"}}>{props.info}</p>
+                    </Card.Text>
+            </Card.Body>
+                <Button variant="dark">Submit</Button>
+            </Card>
+            
+         
 
         
             
         </div>
-        <h3>{props.info}</h3>
-        </div>
+       
+       
         
     )
 }

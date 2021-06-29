@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './BadgeForm.css';
 import Badge from "./Badge"
+import Button from 'react-bootstrap/Button';
+
+
+
 
 class BadgeForm extends Component {
     constructor(){
@@ -20,9 +24,6 @@ class BadgeForm extends Component {
           // binding methods to (this)
           this.handleChange = this.handleChange.bind(this)
           this.handleSubmit = this.handleSubmit.bind(this)
-          // this.print = this.print.bind(this)
-          this.handleClear = this.handleClear.bind(this)
-
     }
 
     // handle change method
@@ -32,15 +33,7 @@ class BadgeForm extends Component {
     
   }
     // we are just clearing inputs in [state]
-   handleClear(event){
-    const {name,value} = event.target
-      this.setState({
-        [name]: ""
-        
-      
-      })
-
-    }
+  
 
   print(){
     // test print functuon to ensure that the handle submit function works
@@ -53,7 +46,7 @@ class BadgeForm extends Component {
     //preventDefault stuff
     this.setState(prevState => {
         return{
-            users: [...this.state.users, 
+            users: [...prevState.users, 
                 {
                 firstName: this.state.firstName, 
                 lastName: this.state.lastName, 
@@ -72,47 +65,19 @@ class BadgeForm extends Component {
     
     })
 
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      poBirth: "",
+      favFood: "",
+      info: "",
+    })
    
 
-    this.setState(prevState => {
-      return{
-          users: [...prevState.users, 
-              {
-              firstName: this.state.firstName, 
-              lastName: this.state.lastName, 
-              email: this.state.email, 
-              phone: this.state.phone, 
-              poBirth: this.state.poBirth,
-              favFood: this.state.favFood,
-              info: this.state.info,
-              //conditional render for onsubmit
-              isSubmitted: true
-          }]
-           
-      }
-  //clear the value of your form's inputs through state
-    
-  
-  })
-  console.log(this.firstname)
-  console.log(event.target)
 
-  // this.firstname.value = "";
-
-    }
-
-
-    // handle submit will update users array, and add a new user
-//     handleSubmit = event => {
-//     event.preventDefault();
-//     this.setState(prevState => {
-//       return {
-//         users: [...this.state.users, this.state.user ]
-//       }
-//     })
-//   }
-
-
+}
 
   render() {
     // can use a index in the map, as a key.
@@ -230,17 +195,18 @@ class BadgeForm extends Component {
         />
         <br></br>
 
-        <button>Submit</button>
-
+        
+        {/* Submit button */}
+        <Button onClick={this.handleSubmit} variant="dark">Submit </Button>
         </form>
+        
 
-        {/* <p>{this.state.firstName}</p> */}
+        <div style={{display: "flex"}}>
         {namesSubmitted}
-       {/* <h1> {this.state.users.firstName} </h1> */}
-        {/* {this.state.users.lastName} */}
-        {/* {this.state.isSubmitted && <h1>Submittied</h1>} */}
-
+        </div>
       </div>
+
+      
         
 
     );
